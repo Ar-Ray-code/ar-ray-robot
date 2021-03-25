@@ -1,0 +1,150 @@
+<robot name="ar_ray_robot">
+
+<link name="odom">
+    <inertial>
+        <mass value="1"/>
+        <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" />
+        <geometry>
+            <box size=".015 .105 .02" />
+        </geometry>
+        <material name="black">
+            <color rgba="0 0 0 1"/>
+        </material>
+    </visual>
+
+    <collision>
+        <origin xyz="0 0 0" />
+        <geometry>
+            <box size=".015 .105 .02" />
+        </geometry>
+        <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+    </collision>
+
+    
+</link>
+
+<link name="base_link">
+    <inertial>
+        <mass value="1"/>
+        <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        <!-- <origin/> -->
+    </inertial>
+
+    <visual>
+        <origin xyz="0 0 .0575" />
+        <geometry>
+            <box size=".21 .15 .12" />
+        </geometry>
+        <material name="white">
+            <color rgba="1 1 1 1"/>
+        </material>
+    </visual>
+
+    <collision>
+        <origin xyz="0 0 .0575" />
+        <geometry>
+            <box size=".21 .15 .12" />
+        </geometry>
+        <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+    </collision>
+</link>
+
+<link name="wheel0">
+    <visual>
+        <geometry>
+            <cylinder length="0.03" radius="0.04"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="1.57 0 0"/>
+        <material name="blue">
+            <color rgba="0 0 1 1"/>
+        </material>
+    </visual>
+</link>
+<link name="wheel1">
+    <visual>
+        <geometry>
+            <cylinder length="0.03" radius="0.04"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="1.57 0 0"/>
+        <material name="blue">
+            <color rgba="0 0 1 1"/>
+        </material>
+    </visual>
+</link>
+<link name="wheel2">
+    <visual>
+        <geometry>
+            <cylinder length="0.03" radius="0.04"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="1.57 0 0"/>
+        <material name="blue">
+            <color rgba="0 0 1 1"/>
+        </material>
+    </visual>
+</link>
+<link name="wheel3">
+    <visual>
+        <geometry>
+            <cylinder length="0.03" radius="0.04"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="1.57 0 0"/>
+        <material name="blue">
+            <color rgba="0 0 1 1"/>
+        </material>
+    </visual>
+</link>
+
+<link name="lidar">
+    <visual>
+        <geometry>
+            <cylinder length="0.07" radius="0.025"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="green">
+            <color rgba="0 1 0 1"/>
+        </material>
+    </visual>
+</link>
+
+
+
+
+<!-- joint -->
+
+<joint name="base_linkconnect" type="fixed">
+    <origin xyz="-.12 0 -.055" />
+    <parent link="odom"/>
+    <child link="base_link"/>
+</joint>
+
+<joint name="wheel0_connect" type="fixed">
+    <origin xyz=".05 .105 .04" />
+    <parent link="base_link"/>
+    <child link="wheel0"/>
+</joint>
+<joint name="wheel1_connect" type="fixed">
+    <origin xyz="-.05 .105 .04" />
+    <parent link="base_link"/>
+    <child link="wheel1"/>
+</joint>
+<joint name="wheel2_connect" type="fixed">
+    <origin xyz=".05 -.105 .04" />
+    <parent link="base_link"/>
+    <child link="wheel2"/>
+</joint>
+<joint name="wheel3_connect" type="fixed">
+    <origin xyz="-.05 -.105 .04" />
+    <parent link="base_link"/>
+    <child link="wheel3"/>
+</joint>
+<joint name="lidar_connect" type="fixed">
+    <origin xyz=".085 .0 .155" />
+    <parent link="base_link"/>
+    <child link="lidar"/>
+</joint>
+
+</robot>
+
