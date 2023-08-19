@@ -1,4 +1,4 @@
-<robot name="ar_ray_robot">
+<robot name="simple_mecanum_wheel">
 
 <link name="odom">
     <inertial>
@@ -147,4 +147,3 @@
 </joint>
 
 </robot>
-

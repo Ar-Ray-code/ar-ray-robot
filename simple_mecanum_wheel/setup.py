@@ -3,7 +3,7 @@ from glob import glob
 from setuptools import setup
 from setuptools import find_packages
 
-package_name = 'ar-ray-robot'
+package_name = 'simple_mecanum_wheel'
 
 setup(
     name=package_name,

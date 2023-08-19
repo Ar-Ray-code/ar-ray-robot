@@ -22,11 +22,11 @@ def generate_launch_description():
     config_file_name = 'ar_ray_robot.rviz'
 
     rviz_config = os.path.join(
-        get_package_share_directory('ar-ray-robot'),
+        get_package_share_directory('simple_mecanum_wheel'),
         config_file_name)
 
     urdf = os.path.join(
-        get_package_share_directory('ar-ray-robot'),
+        get_package_share_directory('simple_mecanum_wheel'),
         urdf_file_name)
 
     t265_node = Node(

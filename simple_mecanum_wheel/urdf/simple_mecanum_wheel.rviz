@@ -96,7 +96,7 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz_default_plugins/RobotModel
       Collision Enabled: false
-      Description File: /home/ubuntu/ros2_ws/src/ar-ray-robot/urdf/ar_ray_robot.urdf.xml
+      Description File: /home/ubuntu/ros2_ws/src/simple_mecanum_wheel/urdf/ar_ray_robot.urdf.xml
       Description Source: File
       Description Topic:
         Depth: 5
