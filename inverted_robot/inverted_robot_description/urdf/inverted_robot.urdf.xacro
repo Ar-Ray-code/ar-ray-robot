@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot name="inverted_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find inverted_robot_description)/urdf/inverted_robot.xacro" />
+  <xacro:include filename="$(find inverted_robot_description)/urdf/inverted_robot.ros2_control.xacro" />
+
+  <link name="world"/>
+
+  <xacro:inverted_robot parent="world">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:inverted_robot>
+
+  <xacro:inverted_robot_ros2_control name="inverted_robot_ros2_control" />
+</robot>
